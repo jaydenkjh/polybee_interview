@@ -15,7 +15,9 @@ subscription: Subscription;
 export class AppComponent implements OnInit {
 
   ngOnInit(){
-    this.cities = JSON.parse(localStorage.getItem("cityArray"));
+    if (localStorage.getItem("cityArray") !== null) {
+      this.cities = JSON.parse(localStorage.getItem("cityArray"));
+    }
   }
 
 
